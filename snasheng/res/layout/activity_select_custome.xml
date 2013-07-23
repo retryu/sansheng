@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.view.SearchView
+        android:id="@+id/SearchView"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip" >
+    </com.view.SearchView>
+
+    <com.view.ListViewSearch
+        android:id="@+id/ListView_Custome"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/SearchView" >
+    </com.view.ListViewSearch>
+
+</RelativeLayout>
