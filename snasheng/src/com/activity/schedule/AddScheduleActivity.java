@@ -1,17 +1,21 @@
 package com.activity.schedule;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.TimePicker;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.activity.CommonActivity;
@@ -29,6 +33,7 @@ public class AddScheduleActivity extends CommonActivity implements
 	private EditText etContent;
 	private RadioGroup rgType;
 	private Schedule schedule;
+	private DatePickerDialog dlg;
 
 	@Override
 	public void onCreate(Bundle arg0) {
@@ -72,7 +77,31 @@ public class AddScheduleActivity extends CommonActivity implements
 	}
 
 	public void showDatePicker() {
+		Calendar d = Calendar.getInstance(Locale.CHINA);
+		Date myDate = new Date();
+		// 创建一个Date实例
+		d.setTime(myDate);
+		int year = d.get(Calendar.YEAR);
+		int month = d.get(Calendar.MONTH);
+		int day = d.get(Calendar.DAY_OF_MONTH);
+		// 获得日历中的 year month day
+		dlg = new DatePickerDialog(this, 0, new OnDateSetListener() {
 
+			@Override
+			public void onDateSet(DatePicker view, int year, int monthOfYear,
+					int dayOfMonth) {
+				Log.e("debyg", "day:" + dayOfMonth + "  month:" + monthOfYear
+						+ 1 + "  year:" + year);
+			}
+		}, year, month, day);
+		dlg.show();
+		dlg.setButton(DatePickerDialog.BUTTON_NEGATIVE, "取消",
+				new OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dlg.dismiss();
+					}
+				});
 	}
 
 	public String getContent() {

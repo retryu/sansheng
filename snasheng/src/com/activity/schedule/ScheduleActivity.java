@@ -22,7 +22,7 @@ public class ScheduleActivity extends CommonActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
 		initWidget();
-	}
+	}  
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
