@@ -35,7 +35,7 @@ public class OrmDateBaseHelper extends SQLiteOpenHelper {
 
 		ConnectionSource connectionSource = new AndroidConnectionSource(this);
 		try {
-			TableUtils.createTable(connectionSource, Schedule.class);
+			TableUtils.createTableIfNotExists(connectionSource, Schedule.class);
 			scheduleDao = DaoManager
 					.createDao(connectionSource, Schedule.class);
 
@@ -50,11 +50,11 @@ public class OrmDateBaseHelper extends SQLiteOpenHelper {
 		Log.e("debug", "onCreate");
 	}
 
-	public static ScheduleDao getScheduleDao() {
+	public ScheduleDao getScheduleDao() {
 		return scheduleDao;
 	}
 
-	public static void setScheduleDao(ScheduleDao scheduleDao) {
+	public void setScheduleDao(ScheduleDao scheduleDao) {
 		OrmDateBaseHelper.scheduleDao = scheduleDao;
 	}
 

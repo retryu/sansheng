@@ -1,5 +1,7 @@
 package com.sansheng.model;
 
+import java.io.Serializable;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.sansheng.dao.impl.ScheduleDaoImpl;
@@ -7,10 +9,10 @@ import com.sansheng.dao.impl.ScheduleDaoImpl;
 import android.R.integer;
 
 @DatabaseTable(daoClass = ScheduleDaoImpl.class)
-public class Schedule {
+public class Schedule implements Serializable {
 
 	public enum Type {
-		visit, part, other
+		visit, birthday, other
 	}
 
 	@DatabaseField(generatedId = true)
@@ -20,11 +22,14 @@ public class Schedule {
 	@DatabaseField
 	private int custome_id;
 	@DatabaseField
-	private int content;
+	private String content;
 	@DatabaseField
 	private String data;
 	@DatabaseField
 	private String custome_name;
+
+	@DatabaseField
+	private String phoneNumber;
 
 	public int getId() {
 		return id;
@@ -50,11 +55,11 @@ public class Schedule {
 		this.custome_id = custome_id;
 	}
 
-	public int getContent() {
+	public String getContent() {
 		return content;
 	}
 
-	public void setContent(int content) {
+	public void setContent(String content) {
 		this.content = content;
 	}
 
@@ -81,7 +86,7 @@ public class Schedule {
 		case visit:
 			typeValue = 1;
 			break;
-		case part:
+		case birthday:
 			typeValue = 2;
 			break;
 		case other:
@@ -89,6 +94,14 @@ public class Schedule {
 			break;
 		}
 		return typeValue;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 }

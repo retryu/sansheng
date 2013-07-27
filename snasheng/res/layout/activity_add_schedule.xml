@@ -18,9 +18,10 @@
             android:layout_marginTop="20dip" >
 
             <RadioButton
-                android:id="@+Id/RB_Visit"
+                android:id="@+id/RB_Visit"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="@string/visit_remaind"
                 android:textColor="#ccc" />
 
@@ -73,6 +74,14 @@
             android:layout_marginTop="10dip"
             android:text="@string/finish" >
         </Button>
+
+        <Button
+            android:id="@+id/Btn_Delete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Btn_Finish"
+            android:text="@string/delete"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </RelativeLayout>

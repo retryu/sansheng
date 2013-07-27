@@ -13,9 +13,16 @@
     <string name="appoint_date">指定日期</string>
     <string name="finish">完成</string>
     <string name="title_schedule_edit">日程编辑</string>
-    
-    
-    <string  name="loading">正在载入中</string>
-
+    <string name="loading">正在载入中</string>
     <string name="alert">提示</string>
+
+    <!-- schedule -->
+    <string name="alert_please_warm_content">请输入提示内容</string>
+    <string name="alert_please_select_custome">请选择一个客户</string>
+    <string name="alert_please_select_date">请输入日期</string>
+    <string name="btn_call">打电话</string>
+    <string name="btn_sms">发短信</string>
+    <string name="schedule_alert">日程提醒</string>
+    <string name="delete">删除</string>
+
 </resources>

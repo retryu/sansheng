@@ -27,7 +27,7 @@ public class ScheduleDaoImpl extends BaseDaoImpl<Schedule, String> implements
 		case visit:
 			typeValue = 1;
 			break;
-		case part:
+		case birthday:
 			typeValue = 2;
 			break;
 		case other:
@@ -42,7 +42,7 @@ public class ScheduleDaoImpl extends BaseDaoImpl<Schedule, String> implements
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return schedules;
 	}
 
 }

@@ -8,9 +8,6 @@
 package com.example.sansheng;
 
 public final class R {
-    public static final class Id {
-        public static final int RB_Visit=0x7f0c0000;
-    }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -922,23 +919,32 @@ containing a value of this type.
         public static final int search=0x7f020073;
     }
     public static final class id {
-        public static final int Btn_Custome=0x7f040035;
-        public static final int Btn_Date=0x7f040037;
-        public static final int Btn_Finish=0x7f040038;
-        public static final int Btn_Search=0x7f040044;
-        public static final int Et_Content=0x7f040036;
-        public static final int Et_Search=0x7f040043;
-        public static final int Img_Avatar=0x7f040040;
-        public static final int ListView_Custome=0x7f04003b;
-        public static final int Process_Loading=0x7f040045;
-        public static final int RB_BirthDay=0x7f040033;
-        public static final int RB_Other=0x7f040034;
+        public static final int Btn_Call=0x7f040048;
+        public static final int Btn_Custome=0x7f040036;
+        public static final int Btn_Date=0x7f040038;
+        public static final int Btn_Delete=0x7f04003a;
+        public static final int Btn_Finish=0x7f040039;
+        public static final int Btn_SMS=0x7f040049;
+        public static final int Btn_Search=0x7f04004d;
+        public static final int Et_Content=0x7f040037;
+        public static final int Et_Search=0x7f04004c;
+        public static final int Img_Avatar=0x7f040043;
+        public static final int ListView_Custome=0x7f04003d;
+        public static final int Lv_Visite=0x7f040042;
+        public static final int Process_Loading=0x7f04004e;
+        public static final int RB_BirthDay=0x7f040034;
+        public static final int RB_Other=0x7f040035;
         public static final int RB_Type=0x7f040032;
-        public static final int SearchView=0x7f04003a;
-        public static final int Tv_ContactName=0x7f040041;
-        public static final int Tv_ContactNumber=0x7f040042;
-        public static final int Tv_Loading=0x7f040046;
-        public static final int ViewPaper_Content=0x7f040039;
+        public static final int RB_Visit=0x7f040033;
+        public static final int SearchView=0x7f04003c;
+        public static final int Tv_ContactName=0x7f040044;
+        public static final int Tv_ContactNumber=0x7f040045;
+        public static final int Tv_Content=0x7f04004a;
+        public static final int Tv_Custome=0x7f040047;
+        public static final int Tv_Day=0x7f040046;
+        public static final int Tv_Loading=0x7f04004f;
+        public static final int Tv_Visite_Content=0x7f04004b;
+        public static final int ViewPaper_Content=0x7f04003b;
         public static final int abs__action_bar=0x7f040020;
         public static final int abs__action_bar_container=0x7f04001f;
         public static final int abs__action_bar_subtitle=0x7f040011;
@@ -978,11 +984,11 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f040047;
-        public static final int contactitem_avatar_iv=0x7f04003e;
-        public static final int contactitem_catalog=0x7f04003c;
-        public static final int contactitem_layout=0x7f04003d;
-        public static final int contactitem_nick=0x7f04003f;
+        public static final int action_settings=0x7f040050;
+        public static final int contactitem_avatar_iv=0x7f040040;
+        public static final int contactitem_catalog=0x7f04003e;
+        public static final int contactitem_layout=0x7f04003f;
+        public static final int contactitem_nick=0x7f040041;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040026;
         public static final int homeAsUp=0x7f040006;
@@ -1029,10 +1035,13 @@ containing a value of this type.
         public static final int fragment_remind_other=0x7f03001b;
         public static final int fragment_remind_visit=0x7f03001c;
         public static final int layout_friend_item=0x7f03001d;
-        public static final int layout_search_view=0x7f03001e;
-        public static final int loading_dialog=0x7f03001f;
-        public static final int sherlock_spinner_dropdown_item=0x7f030020;
-        public static final int sherlock_spinner_item=0x7f030021;
+        public static final int layout_schedule_birthday=0x7f03001e;
+        public static final int layout_schedule_other=0x7f03001f;
+        public static final int layout_schedule_visite=0x7f030020;
+        public static final int layout_search_view=0x7f030021;
+        public static final int loading_dialog=0x7f030022;
+        public static final int sherlock_spinner_dropdown_item=0x7f030023;
+        public static final int sherlock_spinner_item=0x7f030024;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -1079,13 +1088,22 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
         public static final int action_settings=0x7f09000e;
         public static final int alert=0x7f090018;
+        public static final int alert_please_select_custome=0x7f09001a;
+        public static final int alert_please_select_date=0x7f09001b;
+        /**  schedule 
+         */
+        public static final int alert_please_warm_content=0x7f090019;
         public static final int app_name=0x7f09000d;
         public static final int appoint_date=0x7f090014;
         public static final int brithday_remaind=0x7f090011;
+        public static final int btn_call=0x7f09001c;
+        public static final int btn_sms=0x7f09001d;
+        public static final int delete=0x7f09001f;
         public static final int finish=0x7f090015;
         public static final int hello_world=0x7f09000f;
         public static final int loading=0x7f090017;
         public static final int other_remaind=0x7f090012;
+        public static final int schedule_alert=0x7f09001e;
         public static final int title_schedule_edit=0x7f090016;
         public static final int visit_custome=0x7f090013;
         /**  schedule 

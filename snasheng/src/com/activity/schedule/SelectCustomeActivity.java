@@ -15,6 +15,7 @@ import com.activity.custome.CustomeAdapter;
 import com.example.sansheng.R;
 import com.j256.ormlite.stmt.query.In;
 import com.sansheng.model.Contact;
+import com.sansheng.model.Schedule;
 import com.util.ContactUtil;
 import com.view.ListViewSearch;
 import com.view.LodingDilog;
@@ -38,6 +39,8 @@ public class SelectCustomeActivity extends CommonActivity {
 		setContentView(R.layout.activity_select_custome);
 		initWidget();
 	}
+
+	 
 
 	public void initWidget() {
 		commonActivity = this;

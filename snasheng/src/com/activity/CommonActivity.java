@@ -14,5 +14,9 @@ public class CommonActivity extends SherlockFragmentActivity {
 		super.onCreate(arg0);
 		setTheme(THEME);
 	}
+
+	public String getStr(int strId) {
+		String string = getResources().getString(strId);
+		return string;
+	}
 }
-  

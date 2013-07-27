@@ -10,11 +10,15 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.activity.CommonActivity;
 import com.example.sansheng.R;
+import com.sansheng.dao.interfaze.ScheduleDao;
+import com.sansheng.model.Schedule;
 
 public class ScheduleActivity extends CommonActivity {
 	private ViewPager viewPager;
 	private TabsAdapter tabsAdapter;
 	private ActionBar actionBar;
+	private ScheduleDao scheduleDao;
+	private Schedule schedule;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +26,16 @@ public class ScheduleActivity extends CommonActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
 		initWidget();
-	}  
+		ckeckIntent(getIntent());
+	}
+
+	public void ckeckIntent(Intent intent) {
+		if (intent == null || intent.getExtras() == null) {
+			return;
+		}
+		int tabIndex = intent.getExtras().getInt("tabIndex");
+		viewPager.setCurrentItem(tabIndex);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,12 +52,18 @@ public class ScheduleActivity extends CommonActivity {
 		Log.e("debug", item.getItemId() + "");
 		Intent intent = new Intent(this, AddScheduleActivity.class);
 		startActivity(intent);
+		finish();
 		return super.onOptionsItemSelected(item);
 	}
+	
+	
+	
 
 	public void initWidget() {
 		actionBar = getSupportActionBar();
 		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setTitle(R.string.schedule_alert);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		viewPager = (ViewPager) findViewById(R.id.ViewPaper_Content);
 		tabsAdapter = new TabsAdapter(this, viewPager);
