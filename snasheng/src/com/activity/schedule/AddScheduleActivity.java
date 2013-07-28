@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Toast;
@@ -135,7 +137,7 @@ public class AddScheduleActivity extends CommonActivity implements
 		schedule = new Schedule();
 		tabIndex = 1;
 		actionBar = getSupportActionBar();
-
+		actionBar.hide();
 		actionBar.setLogo(R.drawable.search);
 		actionBar.setDisplayShowHomeEnabled(true);
 		actionBar.setHomeButtonEnabled(true);
@@ -147,6 +149,8 @@ public class AddScheduleActivity extends CommonActivity implements
 		btnFinish = (Button) findViewById(R.id.Btn_Finish);
 		rgType = (RadioGroup) findViewById(R.id.RB_Type);
 		btnDelete = (Button) findViewById(R.id.Btn_Delete);
+		ImageButton btnBac = (ImageButton) findViewById(R.id.Btn_Back);
+		btnBac.setOnClickListener(this);
 		schedule.setType(Type.visit);
 		rgType.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -183,7 +187,9 @@ public class AddScheduleActivity extends CommonActivity implements
 			Intent intent = new Intent(this, SelectCustomeActivity.class);
 			startActivityForResult(intent, 0);
 			break;
-
+		case R.id.Btn_Back:
+			back();
+			break;
 		case R.id.Btn_Date:
 			showDatePicker();
 			break;

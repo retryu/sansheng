@@ -3,7 +3,12 @@ package com.activity.schedule;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -12,13 +17,21 @@ import com.activity.CommonActivity;
 import com.example.sansheng.R;
 import com.sansheng.dao.interfaze.ScheduleDao;
 import com.sansheng.model.Schedule;
+import com.view.BtnTab;
 
-public class ScheduleActivity extends CommonActivity {
+public class ScheduleActivity extends CommonActivity implements OnClickListener {
 	private ViewPager viewPager;
 	private TabsAdapter tabsAdapter;
 	private ActionBar actionBar;
 	private ScheduleDao scheduleDao;
 	private Schedule schedule;
+
+	private Button btnAdd;
+	private ImageButton btnBack;
+
+	private BtnTab tabVisit;
+	private BtnTab tabBirthDay;
+	private BtnTab tabOther;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +48,15 @@ public class ScheduleActivity extends CommonActivity {
 		}
 		int tabIndex = intent.getExtras().getInt("tabIndex");
 		viewPager.setCurrentItem(tabIndex);
+		setCurrentTab(tabIndex);
 	}
 
-	@Override
+	@Override   
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 		// return super.onCreateOptionsMenu(menu);
-		MenuItem add = menu.add(0, 1, 0, "添加");
-		add.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+		// MenuItem add = menu.add(0, 1, 0, "添加");
+		// add.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 		return true;
 	}
 
@@ -55,16 +69,39 @@ public class ScheduleActivity extends CommonActivity {
 		finish();
 		return super.onOptionsItemSelected(item);
 	}
-	
-	
-	
+
+	public void setCurrentTab(int index) {
+		tabBirthDay.unSleetced();
+		tabOther.unSleetced();
+		tabVisit.unSleetced();
+		if (index == 0) {
+			tabVisit.selected();
+		}
+		if (index == 1) {
+			tabBirthDay.selected();
+		}
+		if (index == 2) {
+			tabOther.selected();
+		}
+	}
 
 	public void initWidget() {
 		actionBar = getSupportActionBar();
-		actionBar.setHomeButtonEnabled(true);
+		// actionBar.setHomeButtonEnabled(true);
 		actionBar.setDisplayShowHomeEnabled(true);
 		actionBar.setTitle(R.string.schedule_alert);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.hide();
+		btnAdd = (Button) findViewById(R.id.Btn_add);
+		btnBack = (ImageButton) findViewById(R.id.Btn_Back);
+		btnAdd.setOnClickListener(this);
+		btnBack.setOnClickListener(this);
+
+		tabVisit = (BtnTab) findViewById(R.id.Btn_Visit);
+		tabVisit.selected();
+		tabBirthDay = (BtnTab) findViewById(R.id.Btn_Party);
+		tabOther = (BtnTab) findViewById(R.id.Btn_Other);
+
 		viewPager = (ViewPager) findViewById(R.id.ViewPaper_Content);
 		tabsAdapter = new TabsAdapter(this, viewPager);
 		tabsAdapter.addTab(actionBar.newTab().setText("拜访提醒"),
@@ -73,6 +110,42 @@ public class ScheduleActivity extends CommonActivity {
 				FragmentBirthDay.class, null);
 		tabsAdapter.addTab(actionBar.newTab().setText("其他提醒"),
 				FragmentOther.class, null);
+		viewPager.setOnPageChangeListener(new OnPageChangeListener() {
+
+			@Override
+			public void onPageSelected(int index) {
+				setCurrentTab(index);
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+	}
+
+	@Override
+	public void onClick(View v) {
+		int id = v.getId();
+		switch (id) {
+		case R.id.Btn_add:
+			Intent intent = new Intent(this, AddScheduleActivity.class);
+			startActivity(intent);
+			finish();
+
+			break;
+
+		case R.id.Btn_Back:
+
+			break;
+		}
 
 	}
 }

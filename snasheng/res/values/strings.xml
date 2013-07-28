@@ -23,6 +23,7 @@
     <string name="btn_call">打电话</string>
     <string name="btn_sms">发短信</string>
     <string name="schedule_alert">日程提醒</string>
+    <string name="schedule_edit">日程编辑</string>
     <string name="delete">删除</string>
 
 </resources>
