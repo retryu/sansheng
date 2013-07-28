@@ -18,6 +18,7 @@ import com.example.sansheng.R;
 import com.sansheng.dao.interfaze.ScheduleDao;
 import com.sansheng.model.Schedule;
 import com.view.BtnTab;
+import com.view.HeadBar;
 
 public class ScheduleActivity extends CommonActivity implements OnClickListener {
 	private ViewPager viewPager;
@@ -51,7 +52,7 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 		setCurrentTab(tabIndex);
 	}
 
-	@Override   
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 		// return super.onCreateOptionsMenu(menu);
@@ -92,7 +93,11 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 		actionBar.setTitle(R.string.schedule_alert);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		actionBar.hide();
-		btnAdd = (Button) findViewById(R.id.Btn_add);
+
+		HeadBar headBar = (HeadBar) findViewById(R.id.Head_Bar);
+		headBar.setWidgetClickListener(this);
+		headBar.setBtnRightText("添加");
+		btnAdd = (Button) findViewById(R.id.Btn_Right);
 		btnBack = (ImageButton) findViewById(R.id.Btn_Back);
 		btnAdd.setOnClickListener(this);
 		btnBack.setOnClickListener(this);
@@ -135,7 +140,7 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 	public void onClick(View v) {
 		int id = v.getId();
 		switch (id) {
-		case R.id.Btn_add:
+		case R.id.Btn_Right:
 			Intent intent = new Intent(this, AddScheduleActivity.class);
 			startActivity(intent);
 			finish();
@@ -145,6 +150,7 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 		case R.id.Btn_Back:
 
 			break;
+
 		}
 
 	}

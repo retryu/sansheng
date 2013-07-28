@@ -17,6 +17,8 @@ import com.j256.ormlite.stmt.query.In;
 import com.sansheng.model.Contact;
 import com.sansheng.model.Schedule;
 import com.util.ContactUtil;
+import com.view.HeadBar;
+import com.view.HeadBar.BtnType;
 import com.view.ListViewSearch;
 import com.view.LodingDilog;
 
@@ -40,14 +42,15 @@ public class SelectCustomeActivity extends CommonActivity {
 		initWidget();
 	}
 
-	 
-
 	public void initWidget() {
 		commonActivity = this;
 		getSupportActionBar().setTitle("拜访客户");
+		getSupportActionBar().hide();
 		lodingDilog = new LodingDilog(this);
 		lodingDilog.show();
 		uiHandler = new UIHandler();
+		HeadBar headBar = (HeadBar) findViewById(R.id.Head_Bar);
+		headBar.setRightImage(BtnType.empty);
 		lvCustome = (com.view.ListViewSearch) findViewById(R.id.ListView_Custome);
 		searchView = (com.view.SearchView) findViewById(R.id.SearchView);
 		lvCustome.setMySearchView(searchView);

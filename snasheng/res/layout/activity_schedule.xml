@@ -4,38 +4,17 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/Rl_Head_Bar"
+    <com.view.HeadBar
+        android:id="@+id/Head_Bar"
         android:layout_width="fill_parent"
-        android:layout_height="45dip" >
-
-        <ImageButton
-            android:id="@+id/Btn_Back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/ic_launcher" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/schedule_alert"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/Btn_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="添加" />
-    </RelativeLayout>
+        android:layout_height="wrap_content" >
+    </com.view.HeadBar>
 
     <LinearLayout
         android:id="@+id/RL_Tab"
         android:layout_width="fill_parent"
         android:layout_height="45dip"
-        android:layout_below="@id/Rl_Head_Bar"
+        android:layout_below="@id/Head_Bar"
         android:orientation="horizontal" >
 
         <com.view.BtnTab
@@ -54,7 +33,7 @@
             android:text="生日提醒"
             android:textSize="15sp" />
 
-        <com.view.BtnTab  
+        <com.view.BtnTab
             android:id="@+id/Btn_Other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

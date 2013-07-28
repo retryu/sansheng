@@ -5,30 +5,16 @@
     android:background="#ffffff"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/Rl_Head_Bar"
+    <com.view.HeadBar
+        android:id="@+id/Head_Bar"
         android:layout_width="fill_parent"
-        android:layout_height="45dip" >
-
-        <ImageButton
-            android:id="@+id/Btn_Back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/ic_launcher" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/schedule_edit"
-            android:textSize="15sp" />
-    </RelativeLayout>
+        android:layout_height="wrap_content" >
+    </com.view.HeadBar>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Rl_Head_Bar"
+        android:layout_below="@id/Head_Bar"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip" >
 

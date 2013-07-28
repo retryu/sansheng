@@ -37,6 +37,8 @@ import com.sansheng.model.Contact;
 import com.sansheng.model.Schedule;
 import com.sansheng.model.Schedule.Type;
 import com.util.DateUtil;
+import com.view.HeadBar;
+import com.view.HeadBar.BtnType;
 
 public class AddScheduleActivity extends CommonActivity implements
 		android.view.View.OnClickListener {
@@ -51,6 +53,7 @@ public class AddScheduleActivity extends CommonActivity implements
 	private DatePickerDialog dlg;
 	private Button btnDelete;
 	private CommonActivity commonActivity;
+	private HeadBar headBar;
 	Contact contact;
 
 	private ScheduleDao scheduleDao;
@@ -149,8 +152,9 @@ public class AddScheduleActivity extends CommonActivity implements
 		btnFinish = (Button) findViewById(R.id.Btn_Finish);
 		rgType = (RadioGroup) findViewById(R.id.RB_Type);
 		btnDelete = (Button) findViewById(R.id.Btn_Delete);
-		ImageButton btnBac = (ImageButton) findViewById(R.id.Btn_Back);
-		btnBac.setOnClickListener(this);
+		headBar = (HeadBar) findViewById(R.id.Head_Bar);
+		headBar.setWidgetClickListener(this);
+		headBar.setRightImage(BtnType.empty);
 		schedule.setType(Type.visit);
 		rgType.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
