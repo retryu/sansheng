@@ -245,10 +245,11 @@ int drawable abs__textfield_searchview_right_holo_dark 0x7f02006d
 int drawable abs__textfield_searchview_right_holo_light 0x7f02006e
 int drawable abs__toast_frame 0x7f02006f
 int drawable arrow_rigth 0x7f020070
-int drawable default_avatar 0x7f020071
-int drawable ic_launcher 0x7f020072
-int drawable mm_listitem 0x7f020073
-int drawable search 0x7f020074
+int drawable btn_right_setting 0x7f020071
+int drawable default_avatar 0x7f020072
+int drawable ic_launcher 0x7f020073
+int drawable mm_listitem 0x7f020074
+int drawable search 0x7f020075
 int id Btn_Back 0x7f04004c
 int id Btn_Call 0x7f040051
 int id Btn_Custome 0x7f040038
