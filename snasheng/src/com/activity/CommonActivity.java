@@ -1,6 +1,7 @@
 package com.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -16,11 +17,11 @@ public class CommonActivity extends SherlockFragmentActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 
-		setTheme(THEME);
+		setTheme(THEME);   
 
-		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		getSupportActionBar().setCustomView(R.layout.abs_layout);
-
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		Log.e("debug", "sad");
 		// tvTitle = (TextView) getSupportActionBar().getCustomView()
 		// .findViewById(R.id.Tv_Title);
 	}
