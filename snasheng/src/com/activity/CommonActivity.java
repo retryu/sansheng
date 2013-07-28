@@ -21,7 +21,6 @@ public class CommonActivity extends SherlockFragmentActivity {
 
 		getSupportActionBar().setCustomView(R.layout.abs_layout);
 		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-		Log.e("debug", "sad");
 		// tvTitle = (TextView) getSupportActionBar().getCustomView()
 		// .findViewById(R.id.Tv_Title);
 	}
