@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.sansheng.R;
+import com.hp.hpl.sparta.Text;
 
 public class HeadBar extends RelativeLayout {
 
@@ -16,6 +18,7 @@ public class HeadBar extends RelativeLayout {
 	private View view;
 	private Button btnRight;
 	private ImageButton imgRight;
+	private TextView tvTitle;
 
 	public enum BtnType {
 		image, btn, empty
@@ -36,6 +39,7 @@ public class HeadBar extends RelativeLayout {
 		btnBack = (ImageButton) view.findViewById(R.id.Btn_Back);
 		btnRight = (Button) view.findViewById(R.id.Btn_Right);
 		imgRight = (ImageButton) view.findViewById(R.id.Img_Right);
+		tvTitle = (TextView) view.findViewById(R.id.Tv_Title);
 	}
 
 	public ImageButton getBtnBack() {
@@ -44,6 +48,18 @@ public class HeadBar extends RelativeLayout {
 
 	public void setBtnBack(ImageButton btnBack) {
 		this.btnBack = btnBack;
+	}
+
+	public Button getBtnRight() {
+		return btnRight;
+	}
+
+	public ImageButton getImgRight() {
+		return imgRight;
+	}
+
+	public void setTitle(String title) {
+		tvTitle.setText(title);
 	}
 
 	public void setRightImage(BtnType type) {

@@ -17,8 +17,9 @@ public class CommonActivity extends SherlockFragmentActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 
-		setTheme(THEME);   
-
+		setTheme(THEME);
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.hide();
 		getSupportActionBar().setCustomView(R.layout.abs_layout);
 		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		// tvTitle = (TextView) getSupportActionBar().getCustomView()

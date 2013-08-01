@@ -11,6 +11,7 @@
         android:background="@drawable/arrow_rigth" />
 
     <TextView
+        android:id="@+id/Tv_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

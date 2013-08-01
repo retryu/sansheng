@@ -14,6 +14,8 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.activity.CommonActivity;
+import com.activity.index.IndexActivity;
+import com.activity.schedule.Logistics.FragmengLosistics;
 import com.example.sansheng.R;
 import com.sansheng.dao.interfaze.ScheduleDao;
 import com.sansheng.model.Schedule;
@@ -107,16 +109,19 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 		tabBirthDay = (BtnTab) findViewById(R.id.Btn_Party);
 		tabOther = (BtnTab) findViewById(R.id.Btn_Other);
 
+		tabVisit.setOnClickListener(this);
+		tabBirthDay.setOnClickListener(this);
+		tabOther.setOnClickListener(this);
+
 		viewPager = (ViewPager) findViewById(R.id.ViewPaper_Content);
 		tabsAdapter = new TabsAdapter(this, viewPager);
 		tabsAdapter.addTab(actionBar.newTab().setText("拜访提醒"),
 				FragmentVisit.class, null);
 		tabsAdapter.addTab(actionBar.newTab().setText("生日提醒"),
 				FragmentBirthDay.class, null);
-		tabsAdapter.addTab(actionBar.newTab().setText("其他提醒"),
-				FragmentOther.class, null);
+		tabsAdapter.addTab(actionBar.newTab().setText("物流提醒"),
+				FragmengLosistics.class, null);
 		viewPager.setOnPageChangeListener(new OnPageChangeListener() {
-
 			@Override
 			public void onPageSelected(int index) {
 				setCurrentTab(index);
@@ -143,15 +148,38 @@ public class ScheduleActivity extends CommonActivity implements OnClickListener 
 		case R.id.Btn_Right:
 			Intent intent = new Intent(this, AddScheduleActivity.class);
 			startActivity(intent);
-			finish();
 
 			break;
 
 		case R.id.Btn_Back:
-
+			back();
+			break;
+		case R.id.Btn_Visit:
+			viewPager.setCurrentItem(0);
+			break;
+		case R.id.Btn_Party:
+			viewPager.setCurrentItem(1);
+			break;
+		case R.id.Btn_Other:
+			viewPager.setCurrentItem(2);
 			break;
 
 		}
 
 	}
+
+	private void back() {
+		Intent i = new Intent(this, IndexActivity.class);
+		startActivity(i);
+		finish();
+	}
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		back();
+
+	}
+
 }
