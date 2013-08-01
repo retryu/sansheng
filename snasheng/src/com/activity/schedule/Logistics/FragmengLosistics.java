@@ -19,6 +19,8 @@ import com.example.sansheng.R;
 import com.sansheng.dao.interfaze.LogisticsDao;
 import com.sansheng.model.Logistics;
 
+
+//修改
 public class FragmengLosistics extends Fragment {
 
 	private View view;
